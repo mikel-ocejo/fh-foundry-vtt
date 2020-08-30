@@ -8,9 +8,9 @@ export default class TraitSelector extends FormApplication {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
 	    id: "trait-selector",
-      classes: ["dnd5e"],
+      classes: ["fanhunter3e"],
       title: "Actor Trait Selection",
-      template: "systems/dnd5e/templates/apps/trait-selector.html",
+      template: "systems/fanhunter3e/templates/apps/trait-selector.html",
       width: 320,
       height: "auto",
       choices: {},

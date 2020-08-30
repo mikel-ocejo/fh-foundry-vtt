@@ -17,21 +17,21 @@ FANHUNTER.ASCII = `
  * @type {Object}
  */
 FANHUNTER.abilities = {
-  "str": "DND5E.AbilityStr",
-  "dex": "DND5E.AbilityDex",
-  "con": "DND5E.AbilityCon",
-  "int": "DND5E.AbilityInt",
-  "wis": "DND5E.AbilityWis",
-  "cha": "DND5E.AbilityCha"
+  "str": "FANHUNTER3E.AbilityStr",
+  "dex": "FANHUNTER3E.AbilityDex",
+  "con": "FANHUNTER3E.AbilityCon",
+  "int": "FANHUNTER3E.AbilityInt",
+  "wis": "FANHUNTER3E.AbilityWis",
+  "cha": "FANHUNTER3E.AbilityCha"
 };
 
 FANHUNTER.abilityAbbreviations = {
-  "str": "DND5E.AbilityStrAbbr",
-  "dex": "DND5E.AbilityDexAbbr",
-  "con": "DND5E.AbilityConAbbr",
-  "int": "DND5E.AbilityIntAbbr",
-  "wis": "DND5E.AbilityWisAbbr",
-  "cha": "DND5E.AbilityChaAbbr"
+  "str": "FANHUNTER3E.AbilityStrAbbr",
+  "dex": "FANHUNTER3E.AbilityDexAbbr",
+  "con": "FANHUNTER3E.AbilityConAbbr",
+  "int": "FANHUNTER3E.AbilityIntAbbr",
+  "wis": "FANHUNTER3E.AbilityWisAbbr",
+  "cha": "FANHUNTER3E.AbilityChaAbbr"
 };
 
 /* -------------------------------------------- */
@@ -41,34 +41,34 @@ FANHUNTER.abilityAbbreviations = {
  * @type {Object}
  */
 FANHUNTER.alignments = {
-  'lg': "DND5E.AlignmentLG",
-  'ng': "DND5E.AlignmentNG",
-  'cg': "DND5E.AlignmentCG",
-  'ln': "DND5E.AlignmentLN",
-  'tn': "DND5E.AlignmentTN",
-  'cn': "DND5E.AlignmentCN",
-  'le': "DND5E.AlignmentLE",
-  'ne': "DND5E.AlignmentNE",
-  'ce': "DND5E.AlignmentCE"
+  'lg': "FANHUNTER3E.AlignmentLG",
+  'ng': "FANHUNTER3E.AlignmentNG",
+  'cg': "FANHUNTER3E.AlignmentCG",
+  'ln': "FANHUNTER3E.AlignmentLN",
+  'tn': "FANHUNTER3E.AlignmentTN",
+  'cn': "FANHUNTER3E.AlignmentCN",
+  'le': "FANHUNTER3E.AlignmentLE",
+  'ne': "FANHUNTER3E.AlignmentNE",
+  'ce': "FANHUNTER3E.AlignmentCE"
 };
 
 
 FANHUNTER.weaponProficiencies = {
-  "sim": "DND5E.WeaponSimpleProficiency",
-  "mar": "DND5E.WeaponMartialProficiency"
+  "sim": "FANHUNTER3E.WeaponSimpleProficiency",
+  "mar": "FANHUNTER3E.WeaponMartialProficiency"
 };
 
 FANHUNTER.toolProficiencies = {
-  "art": "DND5E.ToolArtisans",
-  "disg": "DND5E.ToolDisguiseKit",
-  "forg": "DND5E.ToolForgeryKit",
-  "game": "DND5E.ToolGamingSet",
-  "herb": "DND5E.ToolHerbalismKit",
-  "music": "DND5E.ToolMusicalInstrument",
-  "navg": "DND5E.ToolNavigators",
-  "pois": "DND5E.ToolPoisonersKit",
-  "thief": "DND5E.ToolThieves",
-  "vehicle": "DND5E.ToolVehicle"
+  "art": "FANHUNTER3E.ToolArtisans",
+  "disg": "FANHUNTER3E.ToolDisguiseKit",
+  "forg": "FANHUNTER3E.ToolForgeryKit",
+  "game": "FANHUNTER3E.ToolGamingSet",
+  "herb": "FANHUNTER3E.ToolHerbalismKit",
+  "music": "FANHUNTER3E.ToolMusicalInstrument",
+  "navg": "FANHUNTER3E.ToolNavigators",
+  "pois": "FANHUNTER3E.ToolPoisonersKit",
+  "thief": "FANHUNTER3E.ToolThieves",
+  "vehicle": "FANHUNTER3E.ToolVehicle"
 };
 
 
@@ -79,16 +79,16 @@ FANHUNTER.toolProficiencies = {
  * @type {Object}
  */
 FANHUNTER.timePeriods = {
-  "inst": "DND5E.TimeInst",
-  "turn": "DND5E.TimeTurn",
-  "round": "DND5E.TimeRound",
-  "minute": "DND5E.TimeMinute",
-  "hour": "DND5E.TimeHour",
-  "day": "DND5E.TimeDay",
-  "month": "DND5E.TimeMonth",
-  "year": "DND5E.TimeYear",
-  "perm": "DND5E.TimePerm",
-  "spec": "DND5E.Special"
+  "inst": "FANHUNTER3E.TimeInst",
+  "turn": "FANHUNTER3E.TimeTurn",
+  "round": "FANHUNTER3E.TimeRound",
+  "minute": "FANHUNTER3E.TimeMinute",
+  "hour": "FANHUNTER3E.TimeHour",
+  "day": "FANHUNTER3E.TimeDay",
+  "month": "FANHUNTER3E.TimeMonth",
+  "year": "FANHUNTER3E.TimeYear",
+  "perm": "FANHUNTER3E.TimePerm",
+  "spec": "FANHUNTER3E.Special"
 };
 
 
@@ -99,27 +99,27 @@ FANHUNTER.timePeriods = {
  * @type {Object}
  */
 FANHUNTER.abilityActivationTypes = {
-  "none": "DND5E.None",
-  "action": "DND5E.Action",
-  "bonus": "DND5E.BonusAction",
-  "reaction": "DND5E.Reaction",
+  "none": "FANHUNTER3E.None",
+  "action": "FANHUNTER3E.Action",
+  "bonus": "FANHUNTER3E.BonusAction",
+  "reaction": "FANHUNTER3E.Reaction",
   "minute": FANHUNTER.timePeriods.minute,
   "hour": FANHUNTER.timePeriods.hour,
   "day": FANHUNTER.timePeriods.day,
   "special": FANHUNTER.timePeriods.spec,
-  "legendary": "DND5E.LegAct",
-  "lair": "DND5E.LairAct",
-  "crew": "DND5E.VehicleCrewAction"
+  "legendary": "FANHUNTER3E.LegAct",
+  "lair": "FANHUNTER3E.LairAct",
+  "crew": "FANHUNTER3E.VehicleCrewAction"
 };
 
 /* -------------------------------------------- */
 
 
 FANHUNTER.abilityConsumptionTypes = {
-  "ammo": "DND5E.ConsumeAmmunition",
-  "attribute": "DND5E.ConsumeAttribute",
-  "material": "DND5E.ConsumeMaterial",
-  "charges": "DND5E.ConsumeCharges"
+  "ammo": "FANHUNTER3E.ConsumeAmmunition",
+  "attribute": "FANHUNTER3E.ConsumeAttribute",
+  "material": "FANHUNTER3E.ConsumeMaterial",
+  "charges": "FANHUNTER3E.ConsumeCharges"
 };
 
 
@@ -127,12 +127,12 @@ FANHUNTER.abilityConsumptionTypes = {
 
 // Creature Sizes
 FANHUNTER.actorSizes = {
-  "tiny": "DND5E.SizeTiny",
-  "sm": "DND5E.SizeSmall",
-  "med": "DND5E.SizeMedium",
-  "lg": "DND5E.SizeLarge",
-  "huge": "DND5E.SizeHuge",
-  "grg": "DND5E.SizeGargantuan"
+  "tiny": "FANHUNTER3E.SizeTiny",
+  "sm": "FANHUNTER3E.SizeSmall",
+  "med": "FANHUNTER3E.SizeMedium",
+  "lg": "FANHUNTER3E.SizeLarge",
+  "huge": "FANHUNTER3E.SizeHuge",
+  "grg": "FANHUNTER3E.SizeGargantuan"
 };
 
 FANHUNTER.tokenSizes = {
@@ -151,22 +151,22 @@ FANHUNTER.tokenSizes = {
  * @type {Object}
  */
 FANHUNTER.itemActionTypes = {
-  "mwak": "DND5E.ActionMWAK",
-  "rwak": "DND5E.ActionRWAK",
-  "msak": "DND5E.ActionMSAK",
-  "rsak": "DND5E.ActionRSAK",
-  "save": "DND5E.ActionSave",
-  "heal": "DND5E.ActionHeal",
-  "abil": "DND5E.ActionAbil",
-  "util": "DND5E.ActionUtil",
-  "other": "DND5E.ActionOther"
+  "mwak": "FANHUNTER3E.ActionMWAK",
+  "rwak": "FANHUNTER3E.ActionRWAK",
+  "msak": "FANHUNTER3E.ActionMSAK",
+  "rsak": "FANHUNTER3E.ActionRSAK",
+  "save": "FANHUNTER3E.ActionSave",
+  "heal": "FANHUNTER3E.ActionHeal",
+  "abil": "FANHUNTER3E.ActionAbil",
+  "util": "FANHUNTER3E.ActionUtil",
+  "other": "FANHUNTER3E.ActionOther"
 };
 
 /* -------------------------------------------- */
 
 FANHUNTER.itemCapacityTypes = {
-  "items": "DND5E.ItemContainerCapacityItems",
-  "weight": "DND5E.ItemContainerCapacityWeight"
+  "items": "FANHUNTER3E.ItemContainerCapacityItems",
+  "weight": "FANHUNTER3E.ItemContainerCapacityWeight"
 };
 
 /* -------------------------------------------- */
@@ -176,10 +176,10 @@ FANHUNTER.itemCapacityTypes = {
  * @type {Object}
  */
 FANHUNTER.limitedUsePeriods = {
-  "sr": "DND5E.ShortRest",
-  "lr": "DND5E.LongRest",
-  "day": "DND5E.Day",
-  "charges": "DND5E.Charges"
+  "sr": "FANHUNTER3E.ShortRest",
+  "lr": "FANHUNTER3E.LongRest",
+  "day": "FANHUNTER3E.Day",
+  "charges": "FANHUNTER3E.Charges"
 };
 
 
@@ -190,15 +190,15 @@ FANHUNTER.limitedUsePeriods = {
  * @type {Object}
  */
 FANHUNTER.equipmentTypes = {
-  "light": "DND5E.EquipmentLight",
-  "medium": "DND5E.EquipmentMedium",
-  "heavy": "DND5E.EquipmentHeavy",
-  "bonus": "DND5E.EquipmentBonus",
-  "natural": "DND5E.EquipmentNatural",
-  "shield": "DND5E.EquipmentShield",
-  "clothing": "DND5E.EquipmentClothing",
-  "trinket": "DND5E.EquipmentTrinket",
-  "vehicle": "DND5E.EquipmentVehicle"
+  "light": "FANHUNTER3E.EquipmentLight",
+  "medium": "FANHUNTER3E.EquipmentMedium",
+  "heavy": "FANHUNTER3E.EquipmentHeavy",
+  "bonus": "FANHUNTER3E.EquipmentBonus",
+  "natural": "FANHUNTER3E.EquipmentNatural",
+  "shield": "FANHUNTER3E.EquipmentShield",
+  "clothing": "FANHUNTER3E.EquipmentClothing",
+  "trinket": "FANHUNTER3E.EquipmentTrinket",
+  "vehicle": "FANHUNTER3E.EquipmentVehicle"
 };
 
 
@@ -212,7 +212,7 @@ FANHUNTER.armorProficiencies = {
   "lgt": FANHUNTER.equipmentTypes.light,
   "med": FANHUNTER.equipmentTypes.medium,
   "hvy": FANHUNTER.equipmentTypes.heavy,
-  "shl": "DND5E.EquipmentShieldProficiency"
+  "shl": "FANHUNTER3E.EquipmentShieldProficiency"
 };
 
 
@@ -223,14 +223,14 @@ FANHUNTER.armorProficiencies = {
  * @type {Object}
  */
 FANHUNTER.consumableTypes = {
-  "ammo": "DND5E.ConsumableAmmunition",
-  "potion": "DND5E.ConsumablePotion",
-  "poison": "DND5E.ConsumablePoison",
-  "food": "DND5E.ConsumableFood",
-  "scroll": "DND5E.ConsumableScroll",
-  "wand": "DND5E.ConsumableWand",
-  "rod": "DND5E.ConsumableRod",
-  "trinket": "DND5E.ConsumableTrinket"
+  "ammo": "FANHUNTER3E.ConsumableAmmunition",
+  "potion": "FANHUNTER3E.ConsumablePotion",
+  "poison": "FANHUNTER3E.ConsumablePoison",
+  "food": "FANHUNTER3E.ConsumableFood",
+  "scroll": "FANHUNTER3E.ConsumableScroll",
+  "wand": "FANHUNTER3E.ConsumableWand",
+  "rod": "FANHUNTER3E.ConsumableRod",
+  "trinket": "FANHUNTER3E.ConsumableTrinket"
 };
 
 /* -------------------------------------------- */
@@ -240,11 +240,11 @@ FANHUNTER.consumableTypes = {
  * @type {Object}
  */
 FANHUNTER.currencies = {
-  "pp": "DND5E.CurrencyPP",
-  "gp": "DND5E.CurrencyGP",
-  "ep": "DND5E.CurrencyEP",
-  "sp": "DND5E.CurrencySP",
-  "cp": "DND5E.CurrencyCP",
+  "pp": "FANHUNTER3E.CurrencyPP",
+  "gp": "FANHUNTER3E.CurrencyGP",
+  "ep": "FANHUNTER3E.CurrencyEP",
+  "sp": "FANHUNTER3E.CurrencySP",
+  "cp": "FANHUNTER3E.CurrencyCP",
 };
 
 
@@ -264,37 +264,37 @@ FANHUNTER.currencyConversion = {
 
 // Damage Types
 FANHUNTER.damageTypes = {
-  "acid": "DND5E.DamageAcid",
-  "bludgeoning": "DND5E.DamageBludgeoning",
-  "cold": "DND5E.DamageCold",
-  "fire": "DND5E.DamageFire",
-  "force": "DND5E.DamageForce",
-  "lightning": "DND5E.DamageLightning",
-  "necrotic": "DND5E.DamageNecrotic",
-  "piercing": "DND5E.DamagePiercing",
-  "poison": "DND5E.DamagePoison",
-  "psychic": "DND5E.DamagePsychic",
-  "radiant": "DND5E.DamageRadiant",
-  "slashing": "DND5E.DamageSlashing",
-  "thunder": "DND5E.DamageThunder"
+  "acid": "FANHUNTER3E.DamageAcid",
+  "bludgeoning": "FANHUNTER3E.DamageBludgeoning",
+  "cold": "FANHUNTER3E.DamageCold",
+  "fire": "FANHUNTER3E.DamageFire",
+  "force": "FANHUNTER3E.DamageForce",
+  "lightning": "FANHUNTER3E.DamageLightning",
+  "necrotic": "FANHUNTER3E.DamageNecrotic",
+  "piercing": "FANHUNTER3E.DamagePiercing",
+  "poison": "FANHUNTER3E.DamagePoison",
+  "psychic": "FANHUNTER3E.DamagePsychic",
+  "radiant": "FANHUNTER3E.DamageRadiant",
+  "slashing": "FANHUNTER3E.DamageSlashing",
+  "thunder": "FANHUNTER3E.DamageThunder"
 };
 
 // Damage Resistance Types
 FANHUNTER.damageResistanceTypes = mergeObject(duplicate(FANHUNTER.damageTypes), {
-  "physical": "DND5E.DamagePhysical"
+  "physical": "FANHUNTER3E.DamagePhysical"
 });
 
 
 /* -------------------------------------------- */
 
 FANHUNTER.distanceUnits = {
-  "none": "DND5E.None",
-  "self": "DND5E.DistSelf",
-  "touch": "DND5E.DistTouch",
-  "ft": "DND5E.DistFt",
-  "mi": "DND5E.DistMi",
-  "spec": "DND5E.Special",
-  "any": "DND5E.DistAny"
+  "none": "FANHUNTER3E.None",
+  "self": "FANHUNTER3E.DistSelf",
+  "touch": "FANHUNTER3E.DistTouch",
+  "ft": "FANHUNTER3E.DistFt",
+  "mi": "FANHUNTER3E.DistMi",
+  "spec": "FANHUNTER3E.Special",
+  "any": "FANHUNTER3E.DistAny"
 };
 
 /* -------------------------------------------- */
@@ -317,21 +317,21 @@ FANHUNTER.encumbrance = {
  * @type {Object}
  */
 FANHUNTER.targetTypes = {
-  "none": "DND5E.None",
-  "self": "DND5E.TargetSelf",
-  "creature": "DND5E.TargetCreature",
-  "ally": "DND5E.TargetAlly",
-  "enemy": "DND5E.TargetEnemy",
-  "object": "DND5E.TargetObject",
-  "space": "DND5E.TargetSpace",
-  "radius": "DND5E.TargetRadius",
-  "sphere": "DND5E.TargetSphere",
-  "cylinder": "DND5E.TargetCylinder",
-  "cone": "DND5E.TargetCone",
-  "square": "DND5E.TargetSquare",
-  "cube": "DND5E.TargetCube",
-  "line": "DND5E.TargetLine",
-  "wall": "DND5E.TargetWall"
+  "none": "FANHUNTER3E.None",
+  "self": "FANHUNTER3E.TargetSelf",
+  "creature": "FANHUNTER3E.TargetCreature",
+  "ally": "FANHUNTER3E.TargetAlly",
+  "enemy": "FANHUNTER3E.TargetEnemy",
+  "object": "FANHUNTER3E.TargetObject",
+  "space": "FANHUNTER3E.TargetSpace",
+  "radius": "FANHUNTER3E.TargetRadius",
+  "sphere": "FANHUNTER3E.TargetSphere",
+  "cylinder": "FANHUNTER3E.TargetCylinder",
+  "cone": "FANHUNTER3E.TargetCone",
+  "square": "FANHUNTER3E.TargetSquare",
+  "cube": "FANHUNTER3E.TargetCube",
+  "line": "FANHUNTER3E.TargetLine",
+  "wall": "FANHUNTER3E.TargetWall"
 };
 
 
@@ -340,7 +340,7 @@ FANHUNTER.targetTypes = {
 
 /**
  * Map the subset of target types which produce a template area of effect
- * The keys are DND5E target types and the values are MeasuredTemplate shape types
+ * The keys are FANHUNTER3E target types and the values are MeasuredTemplate shape types
  * @type {Object}
  */
 FANHUNTER.areaTargetTypes = {
@@ -359,8 +359,8 @@ FANHUNTER.areaTargetTypes = {
 
 // Healing Types
 FANHUNTER.healingTypes = {
-  "healing": "DND5E.Healing",
-  "temphp": "DND5E.HealingTemp"
+  "healing": "FANHUNTER3E.Healing",
+  "temphp": "FANHUNTER3E.HealingTemp"
 };
 
 
@@ -381,10 +381,10 @@ FANHUNTER.hitDieTypes = ["d6", "d8", "d10", "d12"];
  * @type {Object}
  */
 FANHUNTER.senses = {
-  "bs": "DND5E.SenseBS",
-  "dv": "DND5E.SenseDV",
-  "ts": "DND5E.SenseTS",
-  "tr": "DND5E.SenseTR"
+  "bs": "FANHUNTER3E.SenseBS",
+  "dv": "FANHUNTER3E.SenseDV",
+  "ts": "FANHUNTER3E.SenseTS",
+  "tr": "FANHUNTER3E.SenseTR"
 };
 
 
@@ -395,47 +395,47 @@ FANHUNTER.senses = {
  * @type {Object}
  */
 FANHUNTER.skills = {
-  "acr": "DND5E.SkillAcr",
-  "ani": "DND5E.SkillAni",
-  "arc": "DND5E.SkillArc",
-  "ath": "DND5E.SkillAth",
-  "dec": "DND5E.SkillDec",
-  "his": "DND5E.SkillHis",
-  "ins": "DND5E.SkillIns",
-  "itm": "DND5E.SkillItm",
-  "inv": "DND5E.SkillInv",
-  "med": "DND5E.SkillMed",
-  "nat": "DND5E.SkillNat",
-  "prc": "DND5E.SkillPrc",
-  "prf": "DND5E.SkillPrf",
-  "per": "DND5E.SkillPer",
-  "rel": "DND5E.SkillRel",
-  "slt": "DND5E.SkillSlt",
-  "ste": "DND5E.SkillSte",
-  "sur": "DND5E.SkillSur"
+  "acr": "FANHUNTER3E.SkillAcr",
+  "ani": "FANHUNTER3E.SkillAni",
+  "arc": "FANHUNTER3E.SkillArc",
+  "ath": "FANHUNTER3E.SkillAth",
+  "dec": "FANHUNTER3E.SkillDec",
+  "his": "FANHUNTER3E.SkillHis",
+  "ins": "FANHUNTER3E.SkillIns",
+  "itm": "FANHUNTER3E.SkillItm",
+  "inv": "FANHUNTER3E.SkillInv",
+  "med": "FANHUNTER3E.SkillMed",
+  "nat": "FANHUNTER3E.SkillNat",
+  "prc": "FANHUNTER3E.SkillPrc",
+  "prf": "FANHUNTER3E.SkillPrf",
+  "per": "FANHUNTER3E.SkillPer",
+  "rel": "FANHUNTER3E.SkillRel",
+  "slt": "FANHUNTER3E.SkillSlt",
+  "ste": "FANHUNTER3E.SkillSte",
+  "sur": "FANHUNTER3E.SkillSur"
 };
 
 
 /* -------------------------------------------- */
 
 FANHUNTER.spellPreparationModes = {
-  "always": "DND5E.SpellPrepAlways",
-  "atwill": "DND5E.SpellPrepAtWill",
-  "innate": "DND5E.SpellPrepInnate",
-  "pact": "DND5E.PactMagic",
-  "prepared": "DND5E.SpellPrepPrepared"
+  "always": "FANHUNTER3E.SpellPrepAlways",
+  "atwill": "FANHUNTER3E.SpellPrepAtWill",
+  "innate": "FANHUNTER3E.SpellPrepInnate",
+  "pact": "FANHUNTER3E.PactMagic",
+  "prepared": "FANHUNTER3E.SpellPrepPrepared"
 };
 
 FANHUNTER.spellUpcastModes = ["always", "pact", "prepared"];
 
 
 FANHUNTER.spellProgression = {
-  "none": "DND5E.SpellNone",
-  "full": "DND5E.SpellProgFull",
-  "half": "DND5E.SpellProgHalf",
-  "third": "DND5E.SpellProgThird",
-  "pact": "DND5E.SpellProgPact",
-  "artificer": "DND5E.SpellProgArt"
+  "none": "FANHUNTER3E.SpellNone",
+  "full": "FANHUNTER3E.SpellProgFull",
+  "half": "FANHUNTER3E.SpellProgHalf",
+  "third": "FANHUNTER3E.SpellProgThird",
+  "pact": "FANHUNTER3E.SpellProgPact",
+  "artificer": "FANHUNTER3E.SpellProgArt"
 };
 
 /* -------------------------------------------- */
@@ -445,9 +445,9 @@ FANHUNTER.spellProgression = {
  * @type {Object}
  */
 FANHUNTER.spellScalingModes = {
-  "none": "DND5E.SpellNone",
-  "cantrip": "DND5E.SpellCantrip",
-  "level": "DND5E.SpellLevel"
+  "none": "FANHUNTER3E.SpellNone",
+  "cantrip": "FANHUNTER3E.SpellCantrip",
+  "level": "FANHUNTER3E.SpellLevel"
 };
 
 /* -------------------------------------------- */
@@ -458,13 +458,13 @@ FANHUNTER.spellScalingModes = {
  * @type {Object}
  */
 FANHUNTER.weaponTypes = {
-  "simpleM": "DND5E.WeaponSimpleM",
-  "simpleR": "DND5E.WeaponSimpleR",
-  "martialM": "DND5E.WeaponMartialM",
-  "martialR": "DND5E.WeaponMartialR",
-  "natural": "DND5E.WeaponNatural",
-  "improv": "DND5E.WeaponImprov",
-  "siege": "DND5E.WeaponSiege"
+  "simpleM": "FANHUNTER3E.WeaponSimpleM",
+  "simpleR": "FANHUNTER3E.WeaponSimpleR",
+  "martialM": "FANHUNTER3E.WeaponMartialM",
+  "martialR": "FANHUNTER3E.WeaponMartialR",
+  "natural": "FANHUNTER3E.WeaponNatural",
+  "improv": "FANHUNTER3E.WeaponImprov",
+  "siege": "FANHUNTER3E.WeaponSiege"
 };
 
 
@@ -475,68 +475,68 @@ FANHUNTER.weaponTypes = {
  * @type {Object}
  */
 FANHUNTER.weaponProperties = {
-  "amm": "DND5E.WeaponPropertiesAmm",
-  "hvy": "DND5E.WeaponPropertiesHvy",
-  "fin": "DND5E.WeaponPropertiesFin",
-  "fir": "DND5E.WeaponPropertiesFir",
-  "foc": "DND5E.WeaponPropertiesFoc",
-  "lgt": "DND5E.WeaponPropertiesLgt",
-  "lod": "DND5E.WeaponPropertiesLod",
-  "rch": "DND5E.WeaponPropertiesRch",
-  "rel": "DND5E.WeaponPropertiesRel",
-  "ret": "DND5E.WeaponPropertiesRet",
-  "spc": "DND5E.WeaponPropertiesSpc",
-  "thr": "DND5E.WeaponPropertiesThr",
-  "two": "DND5E.WeaponPropertiesTwo",
-  "ver": "DND5E.WeaponPropertiesVer"
+  "amm": "FANHUNTER3E.WeaponPropertiesAmm",
+  "hvy": "FANHUNTER3E.WeaponPropertiesHvy",
+  "fin": "FANHUNTER3E.WeaponPropertiesFin",
+  "fir": "FANHUNTER3E.WeaponPropertiesFir",
+  "foc": "FANHUNTER3E.WeaponPropertiesFoc",
+  "lgt": "FANHUNTER3E.WeaponPropertiesLgt",
+  "lod": "FANHUNTER3E.WeaponPropertiesLod",
+  "rch": "FANHUNTER3E.WeaponPropertiesRch",
+  "rel": "FANHUNTER3E.WeaponPropertiesRel",
+  "ret": "FANHUNTER3E.WeaponPropertiesRet",
+  "spc": "FANHUNTER3E.WeaponPropertiesSpc",
+  "thr": "FANHUNTER3E.WeaponPropertiesThr",
+  "two": "FANHUNTER3E.WeaponPropertiesTwo",
+  "ver": "FANHUNTER3E.WeaponPropertiesVer"
 };
 
 
 // Spell Components
 FANHUNTER.spellComponents = {
-  "V": "DND5E.ComponentVerbal",
-  "S": "DND5E.ComponentSomatic",
-  "M": "DND5E.ComponentMaterial"
+  "V": "FANHUNTER3E.ComponentVerbal",
+  "S": "FANHUNTER3E.ComponentSomatic",
+  "M": "FANHUNTER3E.ComponentMaterial"
 };
 
 // Spell Schools
 FANHUNTER.spellSchools = {
-  "abj": "DND5E.SchoolAbj",
-  "con": "DND5E.SchoolCon",
-  "div": "DND5E.SchoolDiv",
-  "enc": "DND5E.SchoolEnc",
-  "evo": "DND5E.SchoolEvo",
-  "ill": "DND5E.SchoolIll",
-  "nec": "DND5E.SchoolNec",
-  "trs": "DND5E.SchoolTrs"
+  "abj": "FANHUNTER3E.SchoolAbj",
+  "con": "FANHUNTER3E.SchoolCon",
+  "div": "FANHUNTER3E.SchoolDiv",
+  "enc": "FANHUNTER3E.SchoolEnc",
+  "evo": "FANHUNTER3E.SchoolEvo",
+  "ill": "FANHUNTER3E.SchoolIll",
+  "nec": "FANHUNTER3E.SchoolNec",
+  "trs": "FANHUNTER3E.SchoolTrs"
 };
 
 // Spell Levels
 FANHUNTER.spellLevels = {
-  0: "DND5E.SpellLevel0",
-  1: "DND5E.SpellLevel1",
-  2: "DND5E.SpellLevel2",
-  3: "DND5E.SpellLevel3",
-  4: "DND5E.SpellLevel4",
-  5: "DND5E.SpellLevel5",
-  6: "DND5E.SpellLevel6",
-  7: "DND5E.SpellLevel7",
-  8: "DND5E.SpellLevel8",
-  9: "DND5E.SpellLevel9"
+  0: "FANHUNTER3E.SpellLevel0",
+  1: "FANHUNTER3E.SpellLevel1",
+  2: "FANHUNTER3E.SpellLevel2",
+  3: "FANHUNTER3E.SpellLevel3",
+  4: "FANHUNTER3E.SpellLevel4",
+  5: "FANHUNTER3E.SpellLevel5",
+  6: "FANHUNTER3E.SpellLevel6",
+  7: "FANHUNTER3E.SpellLevel7",
+  8: "FANHUNTER3E.SpellLevel8",
+  9: "FANHUNTER3E.SpellLevel9"
 };
 
 // Spell Scroll Compendium UUIDs
 FANHUNTER.spellScrollIds = {
-  0: 'Compendium.dnd5e.items.rQ6sO7HDWzqMhSI3',
-  1: 'Compendium.dnd5e.items.9GSfMg0VOA2b4uFN',
-  2: 'Compendium.dnd5e.items.XdDp6CKh9qEvPTuS',
-  3: 'Compendium.dnd5e.items.hqVKZie7x9w3Kqds',
-  4: 'Compendium.dnd5e.items.DM7hzgL836ZyUFB1',
-  5: 'Compendium.dnd5e.items.wa1VF8TXHmkrrR35',
-  6: 'Compendium.dnd5e.items.tI3rWx4bxefNCexS',
-  7: 'Compendium.dnd5e.items.mtyw4NS1s7j2EJaD',
-  8: 'Compendium.dnd5e.items.aOrinPg7yuDZEuWr',
-  9: 'Compendium.dnd5e.items.O4YbkJkLlnsgUszZ'
+  0: 'Compendium.FANHUNTER3E.items.rQ6sO7HDWzqMhSI3',
+  1: 'Compendium.FANHUNTER3E.items.9GSfMg0VOA2b4uFN',
+  2: 'Compendium.FANHUNTER3E.items.XdDp6CKh9qEvPTuS',
+  3: 'Compendium.FANHUNTER3E.items.hqVKZie7x9w3Kqds',
+  4: 'Compendium.FANHUNTER3E.items.DM7hzgL836ZyUFB1',
+  5: 'Compendium.FANHUNTER3E.items.wa1VF8TXHmkrrR35',
+  6: 'Compendium.FANHUNTER3E.items.tI3rWx4bxefNCexS',
+  7: 'Compendium.FANHUNTER3E.items.mtyw4NS1s7j2EJaD',
+  8: 'Compendium.FANHUNTER3E.items.aOrinPg7yuDZEuWr',
+  9: 'Compendium.FANHUNTER3E.items.O4YbkJkLlnsgUszZ'
 };
 
 /**
@@ -571,18 +571,18 @@ FANHUNTER.SPELL_SLOT_TABLE = [
 
 // Polymorph options.
 FANHUNTER.polymorphSettings = {
-  keepPhysical: 'DND5E.PolymorphKeepPhysical',
-  keepMental: 'DND5E.PolymorphKeepMental',
-  keepSaves: 'DND5E.PolymorphKeepSaves',
-  keepSkills: 'DND5E.PolymorphKeepSkills',
-  mergeSaves: 'DND5E.PolymorphMergeSaves',
-  mergeSkills: 'DND5E.PolymorphMergeSkills',
-  keepClass: 'DND5E.PolymorphKeepClass',
-  keepFeats: 'DND5E.PolymorphKeepFeats',
-  keepSpells: 'DND5E.PolymorphKeepSpells',
-  keepItems: 'DND5E.PolymorphKeepItems',
-  keepBio: 'DND5E.PolymorphKeepBio',
-  keepVision: 'DND5E.PolymorphKeepVision'
+  keepPhysical: 'FANHUNTER3E.PolymorphKeepPhysical',
+  keepMental: 'FANHUNTER3E.PolymorphKeepMental',
+  keepSaves: 'FANHUNTER3E.PolymorphKeepSaves',
+  keepSkills: 'FANHUNTER3E.PolymorphKeepSkills',
+  mergeSaves: 'FANHUNTER3E.PolymorphMergeSaves',
+  mergeSkills: 'FANHUNTER3E.PolymorphMergeSkills',
+  keepClass: 'FANHUNTER3E.PolymorphKeepClass',
+  keepFeats: 'FANHUNTER3E.PolymorphKeepFeats',
+  keepSpells: 'FANHUNTER3E.PolymorphKeepSpells',
+  keepItems: 'FANHUNTER3E.PolymorphKeepItems',
+  keepBio: 'FANHUNTER3E.PolymorphKeepBio',
+  keepVision: 'FANHUNTER3E.PolymorphKeepVision'
 };
 
 /* -------------------------------------------- */
@@ -593,10 +593,10 @@ FANHUNTER.polymorphSettings = {
  * @type {Object}
  */
 FANHUNTER.proficiencyLevels = {
-  0: "DND5E.NotProficient",
-  1: "DND5E.Proficient",
-  0.5: "DND5E.HalfProficient",
-  2: "DND5E.Expertise"
+  0: "FANHUNTER3E.NotProficient",
+  1: "FANHUNTER3E.Proficient",
+  0.5: "FANHUNTER3E.HalfProficient",
+  2: "FANHUNTER3E.Expertise"
 };
 
 /* -------------------------------------------- */
@@ -607,10 +607,10 @@ FANHUNTER.proficiencyLevels = {
  * in play, we take the highest value.
  */
 FANHUNTER.cover = {
-  0: 'DND5E.None',
-  .5: 'DND5E.CoverHalf',
-  .75: 'DND5E.CoverThreeQuarters',
-  1: 'DND5E.CoverTotal'
+  0: 'FANHUNTER3E.None',
+  .5: 'FANHUNTER3E.CoverHalf',
+  .75: 'FANHUNTER3E.CoverThreeQuarters',
+  1: 'FANHUNTER3E.CoverTotal'
 };
 
 /* -------------------------------------------- */
@@ -618,51 +618,51 @@ FANHUNTER.cover = {
 
 // Condition Types
 FANHUNTER.conditionTypes = {
-  "blinded": "DND5E.ConBlinded",
-  "charmed": "DND5E.ConCharmed",
-  "deafened": "DND5E.ConDeafened",
-  "diseased": "DND5E.ConDiseased",
-  "exhaustion": "DND5E.ConExhaustion",
-  "frightened": "DND5E.ConFrightened",
-  "grappled": "DND5E.ConGrappled",
-  "incapacitated": "DND5E.ConIncapacitated",
-  "invisible": "DND5E.ConInvisible",
-  "paralyzed": "DND5E.ConParalyzed",
-  "petrified": "DND5E.ConPetrified",
-  "poisoned": "DND5E.ConPoisoned",
-  "prone": "DND5E.ConProne",
-  "restrained": "DND5E.ConRestrained",
-  "stunned": "DND5E.ConStunned",
-  "unconscious": "DND5E.ConUnconscious"
+  "blinded": "FANHUNTER3E.ConBlinded",
+  "charmed": "FANHUNTER3E.ConCharmed",
+  "deafened": "FANHUNTER3E.ConDeafened",
+  "diseased": "FANHUNTER3E.ConDiseased",
+  "exhaustion": "FANHUNTER3E.ConExhaustion",
+  "frightened": "FANHUNTER3E.ConFrightened",
+  "grappled": "FANHUNTER3E.ConGrappled",
+  "incapacitated": "FANHUNTER3E.ConIncapacitated",
+  "invisible": "FANHUNTER3E.ConInvisible",
+  "paralyzed": "FANHUNTER3E.ConParalyzed",
+  "petrified": "FANHUNTER3E.ConPetrified",
+  "poisoned": "FANHUNTER3E.ConPoisoned",
+  "prone": "FANHUNTER3E.ConProne",
+  "restrained": "FANHUNTER3E.ConRestrained",
+  "stunned": "FANHUNTER3E.ConStunned",
+  "unconscious": "FANHUNTER3E.ConUnconscious"
 };
 
 // Languages
 FANHUNTER.languages = {
-  "common": "DND5E.LanguagesCommon",
-  "aarakocra": "DND5E.LanguagesAarakocra",
-  "abyssal": "DND5E.LanguagesAbyssal",
-  "aquan": "DND5E.LanguagesAquan",
-  "auran": "DND5E.LanguagesAuran",
-  "celestial": "DND5E.LanguagesCelestial",
-  "deep": "DND5E.LanguagesDeepSpeech",
-  "draconic": "DND5E.LanguagesDraconic",
-  "druidic": "DND5E.LanguagesDruidic",
-  "dwarvish": "DND5E.LanguagesDwarvish",
-  "elvish": "DND5E.LanguagesElvish",
-  "giant": "DND5E.LanguagesGiant",
-  "gith": "DND5E.LanguagesGith",
-  "gnomish": "DND5E.LanguagesGnomish",
-  "goblin": "DND5E.LanguagesGoblin",
-  "gnoll": "DND5E.LanguagesGnoll",
-  "halfling": "DND5E.LanguagesHalfling",
-  "ignan": "DND5E.LanguagesIgnan",
-  "infernal": "DND5E.LanguagesInfernal",
-  "orc": "DND5E.LanguagesOrc",
-  "primordial": "DND5E.LanguagesPrimordial",
-  "sylvan": "DND5E.LanguagesSylvan",
-  "terran": "DND5E.LanguagesTerran",
-  "cant": "DND5E.LanguagesThievesCant",
-  "undercommon": "DND5E.LanguagesUndercommon"
+  "common": "FANHUNTER3E.LanguagesCommon",
+  "aarakocra": "FANHUNTER3E.LanguagesAarakocra",
+  "abyssal": "FANHUNTER3E.LanguagesAbyssal",
+  "aquan": "FANHUNTER3E.LanguagesAquan",
+  "auran": "FANHUNTER3E.LanguagesAuran",
+  "celestial": "FANHUNTER3E.LanguagesCelestial",
+  "deep": "FANHUNTER3E.LanguagesDeepSpeech",
+  "draconic": "FANHUNTER3E.LanguagesDraconic",
+  "druidic": "FANHUNTER3E.LanguagesDruidic",
+  "dwarvish": "FANHUNTER3E.LanguagesDwarvish",
+  "elvish": "FANHUNTER3E.LanguagesElvish",
+  "giant": "FANHUNTER3E.LanguagesGiant",
+  "gith": "FANHUNTER3E.LanguagesGith",
+  "gnomish": "FANHUNTER3E.LanguagesGnomish",
+  "goblin": "FANHUNTER3E.LanguagesGoblin",
+  "gnoll": "FANHUNTER3E.LanguagesGnoll",
+  "halfling": "FANHUNTER3E.LanguagesHalfling",
+  "ignan": "FANHUNTER3E.LanguagesIgnan",
+  "infernal": "FANHUNTER3E.LanguagesInfernal",
+  "orc": "FANHUNTER3E.LanguagesOrc",
+  "primordial": "FANHUNTER3E.LanguagesPrimordial",
+  "sylvan": "FANHUNTER3E.LanguagesSylvan",
+  "terran": "FANHUNTER3E.LanguagesTerran",
+  "cant": "FANHUNTER3E.LanguagesThievesCant",
+  "undercommon": "FANHUNTER3E.LanguagesUndercommon"
 };
 
 // Character Level XP Requirements
@@ -680,70 +680,70 @@ FANHUNTER.CR_EXP_LEVELS = [
 // Configure Optional Character Flags
 FANHUNTER.characterFlags = {
   "powerfulBuild": {
-    name: "DND5E.FlagsPowerfulBuild",
-    hint: "DND5E.FlagsPowerfulBuildHint",
+    name: "FANHUNTER3E.FlagsPowerfulBuild",
+    hint: "FANHUNTER3E.FlagsPowerfulBuildHint",
     section: "Racial Traits",
     type: Boolean
   },
   "savageAttacks": {
-    name: "DND5E.FlagsSavageAttacks",
-    hint: "DND5E.FlagsSavageAttacksHint",
+    name: "FANHUNTER3E.FlagsSavageAttacks",
+    hint: "FANHUNTER3E.FlagsSavageAttacksHint",
     section: "Racial Traits",
     type: Boolean
   },
   "elvenAccuracy": {
-    name: "DND5E.FlagsElvenAccuracy",
-    hint: "DND5E.FlagsElvenAccuracyHint",
+    name: "FANHUNTER3E.FlagsElvenAccuracy",
+    hint: "FANHUNTER3E.FlagsElvenAccuracyHint",
     section: "Racial Traits",
     type: Boolean
   },
   "halflingLucky": {
-    name: "DND5E.FlagsHalflingLucky",
-    hint: "DND5E.FlagsHalflingLuckyHint",
+    name: "FANHUNTER3E.FlagsHalflingLucky",
+    hint: "FANHUNTER3E.FlagsHalflingLuckyHint",
     section: "Racial Traits",
     type: Boolean
   },
   "initiativeAdv": {
-    name: "DND5E.FlagsInitiativeAdv",
-    hint: "DND5E.FlagsInitiativeAdvHint",
+    name: "FANHUNTER3E.FlagsInitiativeAdv",
+    hint: "FANHUNTER3E.FlagsInitiativeAdvHint",
     section: "Feats",
     type: Boolean
   },
   "initiativeAlert": {
-    name: "DND5E.FlagsAlert",
-    hint: "DND5E.FlagsAlertHint",
+    name: "FANHUNTER3E.FlagsAlert",
+    hint: "FANHUNTER3E.FlagsAlertHint",
     section: "Feats",
     type: Boolean
   },
   "jackOfAllTrades": {
-    name: "DND5E.FlagsJOAT",
-    hint: "DND5E.FlagsJOATHint",
+    name: "FANHUNTER3E.FlagsJOAT",
+    hint: "FANHUNTER3E.FlagsJOATHint",
     section: "Feats",
     type: Boolean
   },
   "observantFeat": {
-    name: "DND5E.FlagsObservant",
-    hint: "DND5E.FlagsObservantHint",
+    name: "FANHUNTER3E.FlagsObservant",
+    hint: "FANHUNTER3E.FlagsObservantHint",
     skills: ['prc','inv'],
     section: "Feats",
     type: Boolean
   },
   "reliableTalent": {
-    name: "DND5E.FlagsReliableTalent",
-    hint: "DND5E.FlagsReliableTalentHint",
+    name: "FANHUNTER3E.FlagsReliableTalent",
+    hint: "FANHUNTER3E.FlagsReliableTalentHint",
     section: "Feats",
     type: Boolean
   },
   "remarkableAthlete": {
-    name: "DND5E.FlagsRemarkableAthlete",
-    hint: "DND5E.FlagsRemarkableAthleteHint",
+    name: "FANHUNTER3E.FlagsRemarkableAthlete",
+    hint: "FANHUNTER3E.FlagsRemarkableAthleteHint",
     abilities: ['str','dex','con'],
     section: "Feats",
     type: Boolean
   },
   "weaponCriticalThreshold": {
-    name: "DND5E.FlagsCritThreshold",
-    hint: "DND5E.FlagsCritThresholdHint",
+    name: "FANHUNTER3E.FlagsCritThreshold",
+    hint: "FANHUNTER3E.FlagsCritThresholdHint",
     section: "Feats",
     type: Number,
     placeholder: 20

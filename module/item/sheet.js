@@ -21,7 +21,7 @@ export default class ItemSheet5e extends ItemSheet {
 	  return mergeObject(super.defaultOptions, {
       width: 560,
       height: 420,
-      classes: ["dnd5e", "sheet", "item"],
+      classes: ["fanhunter3e", "sheet", "item"],
       resizable: true,
       scrollY: [".tab.details"],
       tabs: [{navSelector: ".tabs", contentSelector: ".sheet-body", initial: "description"}]
@@ -32,7 +32,7 @@ export default class ItemSheet5e extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/dnd5e/templates/items/";
+    const path = "systems/fanhunter3e/templates/items/";
     return `${path}/${this.item.data.type}.html`;
   }
 
@@ -115,8 +115,8 @@ export default class ItemSheet5e extends ItemSheet {
         const uses = i.data.data.uses || {};
         if ( uses.per && uses.max ) {
           const label = uses.per === "charges" ?
-            ` (${game.i18n.format("DND5E.AbilityUseChargesLabel", {value: uses.value})})` :
-            ` (${game.i18n.format("DND5E.AbilityUseConsumableLabel", {max: uses.max, per: uses.per})})`;
+            ` (${game.i18n.format("FANHUNTER3E.AbilityUseChargesLabel", {value: uses.value})})` :
+            ` (${game.i18n.format("FANHUNTER3E.AbilityUseConsumableLabel", {max: uses.max, per: uses.per})})`;
           obj[i.id] = i.name + label;
         }
         return obj;
@@ -137,10 +137,10 @@ export default class ItemSheet5e extends ItemSheet {
       return CONFIG.FANHUNTER.spellPreparationModes[item.data.preparation];
     }
     else if ( ["weapon", "equipment"].includes(item.type) ) {
-      return game.i18n.localize(item.data.equipped ? "DND5E.Equipped" : "DND5E.Unequipped");
+      return game.i18n.localize(item.data.equipped ? "FANHUNTER3E.Equipped" : "FANHUNTER3E.Unequipped");
     }
     else if ( item.type === "tool" ) {
-      return game.i18n.localize(item.data.proficient ? "DND5E.Proficient" : "DND5E.NotProficient");
+      return game.i18n.localize(item.data.proficient ? "FANHUNTER3E.Proficient" : "FANHUNTER3E.NotProficient");
     }
   }
 
@@ -165,8 +165,8 @@ export default class ItemSheet5e extends ItemSheet {
       props.push(
         labels.components,
         labels.materials,
-        item.data.components.concentration ? game.i18n.localize("DND5E.Concentration") : null,
-        item.data.components.ritual ? game.i18n.localize("DND5E.Ritual") : null
+        item.data.components.concentration ? game.i18n.localize("FANHUNTER3E.Concentration") : null,
+        item.data.components.ritual ? game.i18n.localize("FANHUNTER3E.Ritual") : null
       )
     }
 

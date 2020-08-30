@@ -41,8 +41,8 @@ export default class ActorSheet5e extends ActorSheet {
 
   /** @override */
   get template() {
-    if ( !game.user.isGM && this.actor.limited ) return "systems/dnd5e/templates/actors/limited-sheet.html";
-    return `systems/dnd5e/templates/actors/${this.actor.data.type}-sheet.html`;
+    if ( !game.user.isGM && this.actor.limited ) return "systems/fanhunter3e/templates/actors/limited-sheet.html";
+    return `systems/fanhunter3e/templates/actors/${this.actor.data.type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -429,7 +429,7 @@ export default class ActorSheet5e extends ActorSheet {
 
   /** @override */
   async _onDropActor(event, data) {
-    const canPolymorph = game.user.isGM || (this.actor.owner && game.settings.get('dnd5e', 'allowPolymorphing'));
+    const canPolymorph = game.user.isGM || (this.actor.owner && game.settings.get('fanhunter3e', 'allowPolymorphing'));
     if ( !canPolymorph ) return false;
 
     // Get the target actor
@@ -448,8 +448,8 @@ export default class ActorSheet5e extends ActorSheet {
       html.find('input').each((i, el) => {
         options[el.name] = el.checked;
       });
-      const settings = mergeObject(game.settings.get('dnd5e', 'polymorphSettings') || {}, options);
-      game.settings.set('dnd5e', 'polymorphSettings', settings);
+      const settings = mergeObject(game.settings.get('fanhunter3e', 'polymorphSettings') || {}, options);
+      game.settings.set('fanhunter3e', 'polymorphSettings', settings);
       return settings;
     };
 
@@ -457,7 +457,7 @@ export default class ActorSheet5e extends ActorSheet {
     return new Dialog({
       title: game.i18n.localize('DND5E.PolymorphPromptTitle'),
       content: {
-        options: game.settings.get('dnd5e', 'polymorphSettings'),
+        options: game.settings.get('fanhunter3e', 'polymorphSettings'),
         i18n: FANHUNTER.polymorphSettings,
         isToken: this.actor.isToken
       },
@@ -491,9 +491,9 @@ export default class ActorSheet5e extends ActorSheet {
         }
       }
     }, {
-      classes: ['dialog', 'dnd5e'],
+      classes: ['dialog', 'fanhunter3e'],
       width: 600,
-      template: 'systems/dnd5e/templates/apps/polymorph-prompt.html'
+      template: 'systems/fanhunter3e/templates/apps/polymorph-prompt.html'
     }).render(true);
   }
 

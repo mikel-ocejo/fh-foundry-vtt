@@ -5,7 +5,7 @@
 export default class AbilityUseDialog extends Dialog {
   constructor(item, dialogData={}, options={}) {
     super(dialogData, options);
-    this.options.classes = ["dnd5e", "dialog"];
+    this.options.classes = ["fanhunter3e", "dialog"];
 
     /**
      * Store a reference to the Item entity being used
@@ -38,7 +38,7 @@ export default class AbilityUseDialog extends Dialog {
     // Prepare dialog form data
     const data = {
       item: item.data,
-      title: game.i18n.format("DND5E.AbilityUseHint", item.data),
+      title: game.i18n.format("FANHUNTER3E.AbilityUseHint", item.data),
       note: this._getAbilityUseNote(item.data, uses, recharge),
       hasLimitedUses: uses.max || recharges,
       canUse: recharges ? recharge.charged : (quantity > 0 && !uses.value) || uses.value > 0,
@@ -48,11 +48,11 @@ export default class AbilityUseDialog extends Dialog {
     if ( item.data.type === "spell" ) this._getSpellData(actorData, itemData, data);
 
     // Render the ability usage template
-    const html = await renderTemplate("systems/dnd5e/templates/apps/ability-use.html", data);
+    const html = await renderTemplate("systems/fanhunter3e/templates/apps/ability-use.html", data);
 
     // Create the Dialog and return as a Promise
     const icon = data.hasSpellSlots ? "fa-magic" : "fa-fist-raised";
-    const label = game.i18n.localize("DND5E.AbilityUse" + (data.hasSpellSlots ? "Cast" : "Use"));
+    const label = game.i18n.localize("FANHUNTER3E.AbilityUse" + (data.hasSpellSlots ? "Cast" : "Use"));
     return new Promise((resolve) => {
       const dlg = new this(item, {
         title: `${item.name}: Usage Configuration`,
@@ -96,7 +96,7 @@ export default class AbilityUseDialog extends Dialog {
       if ( max > 0 ) lmax = i;
       arr.push({
         level: i,
-        label: i > 0 ? game.i18n.format('DND5E.SpellLevelSlot', {level: label, n: slots}) : label,
+        label: i > 0 ? game.i18n.format('FANHUNTER3E.SpellLevelSlot', {level: label, n: slots}) : label,
         canCast: canUpcast && (max > 0),
         hasSlots: slots > 0
       });
@@ -108,7 +108,7 @@ export default class AbilityUseDialog extends Dialog {
     if (pact.level >= lvl) {
       spellLevels.push({
         level: 'pact',
-        label: `${game.i18n.format('DND5E.SpellLevelPact', {level: pact.level, n: pact.value})}`,
+        label: `${game.i18n.format('FANHUNTER3E.SpellLevelPact', {level: pact.level, n: pact.value})}`,
         canCast: canUpcast,
         hasSlots: pact.value > 0
       });
@@ -117,7 +117,7 @@ export default class AbilityUseDialog extends Dialog {
 
     // Return merged data
     data = mergeObject(data, { hasSpellSlots: true, canUpcast, spellLevels });
-    if ( !canCast ) data.errors.push("DND5E.SpellCastNoSlots");
+    if ( !canCast ) data.errors.push("FANHUNTER3E.SpellCastNoSlots");
   }
 
   /* -------------------------------------------- */
@@ -130,11 +130,11 @@ export default class AbilityUseDialog extends Dialog {
 
     // Zero quantity
     const quantity = item.data.quantity;
-    if ( quantity <= 0 ) return game.i18n.localize("DND5E.AbilityUseUnavailableHint");
+    if ( quantity <= 0 ) return game.i18n.localize("FANHUNTER3E.AbilityUseUnavailableHint");
 
     // Abilities which use Recharge
     if ( !!recharge.value ) {
-      return game.i18n.format(recharge.charged ? "DND5E.AbilityUseChargedHint" : "DND5E.AbilityUseRechargeHint", {
+      return game.i18n.format(recharge.charged ? "FANHUNTER3E.AbilityUseChargedHint" : "FANHUNTER3E.AbilityUseRechargeHint", {
         type: item.type,
       })
     }
@@ -144,10 +144,10 @@ export default class AbilityUseDialog extends Dialog {
 
     // Consumables
     if ( item.type === "consumable" ) {
-      let str = "DND5E.AbilityUseNormalHint";
-      if ( uses.value > 1 ) str = "DND5E.AbilityUseConsumableChargeHint";
-      else if ( item.data.quantity === 1 && uses.autoDestroy ) str = "DND5E.AbilityUseConsumableDestroyHint";
-      else if ( item.data.quantity > 1 ) str = "DND5E.AbilityUseConsumableQuantityHint";
+      let str = "FANHUNTER3E.AbilityUseNormalHint";
+      if ( uses.value > 1 ) str = "FANHUNTER3E.AbilityUseConsumableChargeHint";
+      else if ( item.data.quantity === 1 && uses.autoDestroy ) str = "FANHUNTER3E.AbilityUseConsumableDestroyHint";
+      else if ( item.data.quantity > 1 ) str = "FANHUNTER3E.AbilityUseConsumableQuantityHint";
       return game.i18n.format(str, {
         type: item.data.consumableType,
         value: uses.value,
@@ -157,7 +157,7 @@ export default class AbilityUseDialog extends Dialog {
 
     // Other Items
     else {
-      return game.i18n.format("DND5E.AbilityUseNormalHint", {
+      return game.i18n.format("FANHUNTER3E.AbilityUseNormalHint", {
         type: item.type,
         value: uses.value,
         max: uses.max,

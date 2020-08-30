@@ -7,8 +7,8 @@ export default class ActorSheetFlags extends BaseEntitySheet {
     const options = super.defaultOptions;
     return mergeObject(options, {
       id: "actor-flags",
-	    classes: ["dnd5e"],
-      template: "systems/dnd5e/templates/apps/actor-flags.html",
+	    classes: ["fanhunter3e"],
+      template: "systems/fanhunter3e/templates/apps/actor-flags.html",
       width: 500,
       closeOnSubmit: true
     });
@@ -21,7 +21,7 @@ export default class ActorSheetFlags extends BaseEntitySheet {
    * @type {String}
    */
   get title() {
-    return `${game.i18n.localize('DND5E.FlagsTitle')}: ${this.object.name}`;
+    return `${game.i18n.localize('FANHUNTER3E.FlagsTitle')}: ${this.object.name}`;
   }
 
   /* -------------------------------------------- */
@@ -53,8 +53,8 @@ export default class ActorSheetFlags extends BaseEntitySheet {
       flag.type = v.type.name;
       flag.isCheckbox = v.type === Boolean;
       flag.isSelect = v.hasOwnProperty('choices');
-      flag.value = this.entity.getFlag("dnd5e", k);
-      flags[v.section][`flags.dnd5e.${k}`] = flag;
+      flag.value = this.entity.getFlag("fanhunter3e", k);
+      flags[v.section][`flags.fanhunter3e.${k}`] = flag;
     }
     return flags;
   }
@@ -68,18 +68,18 @@ export default class ActorSheetFlags extends BaseEntitySheet {
    */
   _getBonuses() {
     const bonuses = [
-      {name: "data.bonuses.mwak.attack", label: "DND5E.BonusMWAttack"},
-      {name: "data.bonuses.mwak.damage", label: "DND5E.BonusMWDamage"},
-      {name: "data.bonuses.rwak.attack", label: "DND5E.BonusRWAttack"},
-      {name: "data.bonuses.rwak.damage", label: "DND5E.BonusRWDamage"},
-      {name: "data.bonuses.msak.attack", label: "DND5E.BonusMSAttack"},
-      {name: "data.bonuses.msak.damage", label: "DND5E.BonusMSDamage"},
-      {name: "data.bonuses.rsak.attack", label: "DND5E.BonusRSAttack"},
-      {name: "data.bonuses.rsak.damage", label: "DND5E.BonusRSDamage"},
-      {name: "data.bonuses.abilities.check", label: "DND5E.BonusAbilityCheck"},
-      {name: "data.bonuses.abilities.save", label: "DND5E.BonusAbilitySave"},
-      {name: "data.bonuses.abilities.skill", label: "DND5E.BonusAbilitySkill"},
-      {name: "data.bonuses.spell.dc", label: "DND5E.BonusSpellDC"}
+      {name: "data.bonuses.mwak.attack", label: "FANHUNTER3E.BonusMWAttack"},
+      {name: "data.bonuses.mwak.damage", label: "FANHUNTER3E.BonusMWDamage"},
+      {name: "data.bonuses.rwak.attack", label: "FANHUNTER3E.BonusRWAttack"},
+      {name: "data.bonuses.rwak.damage", label: "FANHUNTER3E.BonusRWDamage"},
+      {name: "data.bonuses.msak.attack", label: "FANHUNTER3E.BonusMSAttack"},
+      {name: "data.bonuses.msak.damage", label: "FANHUNTER3E.BonusMSDamage"},
+      {name: "data.bonuses.rsak.attack", label: "FANHUNTER3E.BonusRSAttack"},
+      {name: "data.bonuses.rsak.damage", label: "FANHUNTER3E.BonusRSDamage"},
+      {name: "data.bonuses.abilities.check", label: "FANHUNTER3E.BonusAbilityCheck"},
+      {name: "data.bonuses.abilities.save", label: "FANHUNTER3E.BonusAbilitySave"},
+      {name: "data.bonuses.abilities.skill", label: "FANHUNTER3E.BonusAbilitySkill"},
+      {name: "data.bonuses.spell.dc", label: "FANHUNTER3E.BonusSpellDC"}
     ];
     for ( let b of bonuses ) {
       b.value = getProperty(this.object.data, b.name) || "";
@@ -99,11 +99,11 @@ export default class ActorSheetFlags extends BaseEntitySheet {
 
     // Unset any flags which are "false"
     let unset = false;
-    const flags = updateData.flags.dnd5e;
+    const flags = updateData.flags.fanhunter3e;
     for ( let [k, v] of Object.entries(flags) ) {
       if ( [undefined, null, "", false, 0].includes(v) ) {
         delete flags[k];
-        if ( hasProperty(actor.data.flags, `dnd5e.${k}`) ) {
+        if ( hasProperty(actor.data.flags, `fanhunter3e.${k}`) ) {
           unset = true;
           flags[`-=${k}`] = null;
         }

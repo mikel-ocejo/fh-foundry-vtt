@@ -175,15 +175,15 @@ export default class Item5e extends Item {
     // Feat Items
     else if ( itemData.type === "feat" ) {
       const act = data.activation;
-      if ( act && (act.type === C.abilityActivationTypes.legendary) ) labels.featType = game.i18n.localize("DND5E.LegendaryActionLabel");
-      else if ( act && (act.type === C.abilityActivationTypes.lair) ) labels.featType = game.i18n.localize("DND5E.LairActionLabel");
-      else if ( act && act.type ) labels.featType = game.i18n.localize(data.damage.length ? "DND5E.Attack" : "DND5E.Action");
-      else labels.featType = game.i18n.localize("DND5E.Passive");
+      if ( act && (act.type === C.abilityActivationTypes.legendary) ) labels.featType = game.i18n.localize("FANHUNTER3E.LegendaryActionLabel");
+      else if ( act && (act.type === C.abilityActivationTypes.lair) ) labels.featType = game.i18n.localize("FANHUNTER3E.LairActionLabel");
+      else if ( act && act.type ) labels.featType = game.i18n.localize(data.damage.length ? "FANHUNTER3E.Attack" : "FANHUNTER3E.Action");
+      else labels.featType = game.i18n.localize("FANHUNTER3E.Passive");
     }
 
     // Equipment Items
     else if ( itemData.type === "equipment" ) {
-      labels.armor = data.armor.value ? `${data.armor.value} ${game.i18n.localize("DND5E.AC")}` : "";
+      labels.armor = data.armor.value ? `${data.armor.value} ${game.i18n.localize("FANHUNTER3E.AC")}` : "";
     }
 
     // Activated Items
@@ -217,7 +217,7 @@ export default class Item5e extends Item {
 
       // Recharge Label
       let chg = data.recharge || {};
-      labels.recharge = `${game.i18n.localize("DND5E.Recharge")} [${chg.value}${parseInt(chg.value) < 6 ? "+" : ""}]`;
+      labels.recharge = `${game.i18n.localize("FANHUNTER3E.Recharge")} [${chg.value}${parseInt(chg.value) < 6 ? "+" : ""}]`;
     }
 
     // Item Actions
@@ -232,7 +232,7 @@ export default class Item5e extends Item {
       } else { // Un-owned items
         if ( save.scaling !== "flat" ) save.dc = null;
       }
-      labels.save = save.ability ? `${game.i18n.localize("DND5E.AbbreviationDC")} ${save.dc || ""} ${C.abilities[save.ability]}` : "";
+      labels.save = save.ability ? `${game.i18n.localize("FANHUNTER3E.AbbreviationDC")} ${save.dc || ""} ${C.abilities[save.ability]}` : "";
 
       // Damage
       let dam = data.damage || {};
@@ -343,7 +343,7 @@ export default class Item5e extends Item {
 
     // No consumed target set
     if ( !consume.target ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoResource", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("FANHUNTER3E.ConsumeWarningNoResource", {name: this.name, type: typeLabel}));
       return false;
     }
 
@@ -368,12 +368,12 @@ export default class Item5e extends Item {
 
     // Verify that the consumed resource is available
     if ( [null, undefined].includes(consumed) ) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoSource", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("FANHUNTER3E.ConsumeWarningNoSource", {name: this.name, type: typeLabel}));
       return false;
     }
     let remaining = quantity - amount;
     if ( remaining < 0) {
-      ui.notifications.warn(game.i18n.format("DND5E.ConsumeWarningNoQuantity", {name: this.name, type: typeLabel}));
+      ui.notifications.warn(game.i18n.format("FANHUNTER3E.ConsumeWarningNoQuantity", {name: this.name, type: typeLabel}));
       return false;
     }
 
@@ -422,14 +422,14 @@ export default class Item5e extends Item {
     const current = getProperty(this.data, "data.uses.value") || 0;
     if ( consume && charge.value ) {
       if ( !charge.charged ) {
-        ui.notifications.warn(game.i18n.format("DND5E.ItemNoUses", {name: this.name}));
+        ui.notifications.warn(game.i18n.format("FANHUNTER3E.ItemNoUses", {name: this.name}));
         return false;
       }
       else await this.update({"data.recharge.charged": false});
     }
     else if ( consume && usesCharges ) {
       if ( uses.value <= 0 ) {
-        ui.notifications.warn(game.i18n.format("DND5E.ItemNoUses", {name: this.name}));
+        ui.notifications.warn(game.i18n.format("FANHUNTER3E.ItemNoUses", {name: this.name}));
         return false;
       }
       await this.update({"data.uses.value": Math.max(current - 1, 0)});
@@ -468,8 +468,8 @@ export default class Item5e extends Item {
     // General equipment properties
     if ( data.hasOwnProperty("equipped") && !["loot", "tool"].includes(this.data.type) ) {
       props.push(
-        game.i18n.localize(data.equipped ? "DND5E.Equipped" : "DND5E.Unequipped"),
-        game.i18n.localize(data.proficient ? "DND5E.Proficient" : "DND5E.NotProficient"),
+        game.i18n.localize(data.equipped ? "FANHUNTER3E.Equipped" : "FANHUNTER3E.Unequipped"),
+        game.i18n.localize(data.proficient ? "FANHUNTER3E.Proficient" : "FANHUNTER3E.NotProficient"),
       );
     }
 
@@ -498,7 +498,7 @@ export default class Item5e extends Item {
     props.push(
       CONFIG.FANHUNTER.equipmentTypes[data.armor.type],
       labels.armor || null,
-      data.stealth.value ? game.i18n.localize("DND5E.StealthDisadvantage") : null
+      data.stealth.value ? game.i18n.localize("FANHUNTER3E.StealthDisadvantage") : null
     );
   }
 
@@ -523,7 +523,7 @@ export default class Item5e extends Item {
   _consumableChatData(data, labels, props) {
     props.push(
       CONFIG.FANHUNTER.consumableTypes[data.consumableType],
-      data.uses.value + "/" + data.uses.max + " " + game.i18n.localize("DND5E.Charges")
+      data.uses.value + "/" + data.uses.max + " " + game.i18n.localize("FANHUNTER3E.Charges")
     );
     data.hasCharges = data.uses.value >= 0;
   }
@@ -549,8 +549,8 @@ export default class Item5e extends Item {
    */
   _lootChatData(data, labels, props) {
     props.push(
-      game.i18n.localize("DND5E.ItemTypeLoot"),
-      data.weight ? data.weight + " " + game.i18n.localize("DND5E.AbbreviationLbs") : null
+      game.i18n.localize("FANHUNTER3E.ItemTypeLoot"),
+      data.weight ? data.weight + " " + game.i18n.localize("FANHUNTER3E.AbbreviationLbs") : null
     );
   }
 
@@ -596,7 +596,7 @@ export default class Item5e extends Item {
     if ( !this.hasAttack ) {
       throw new Error("You may not place an Attack Roll with this Item.");
     }
-    let title = `${this.name} - ${game.i18n.localize("DND5E.AttackRoll")}`;
+    let title = `${this.name} - ${game.i18n.localize("FANHUNTER3E.AttackRoll")}`;
     const rollData = this.getRollData();
 
     // Define Roll bonuses
@@ -691,7 +691,7 @@ export default class Item5e extends Item {
     if ( spellLevel ) rollData.item.level = spellLevel;
 
     // Get message labels
-    const title = `${this.name} - ${game.i18n.localize("DND5E.DamageRoll")}`;
+    const title = `${this.name} - ${game.i18n.localize("FANHUNTER3E.DamageRoll")}`;
     let flavor = this.labels.damageTypes.length ? `${title} (${this.labels.damageTypes})` : title;
 
     // Define Roll parts
@@ -857,7 +857,7 @@ export default class Item5e extends Item {
     // Define Roll Data
     const rollData = this.getRollData();
     if ( options.spellLevel ) rollData.item.level = options.spellLevel;
-    const title = `${this.name} - ${game.i18n.localize("DND5E.OtherFormula")}`;
+    const title = `${this.name} - ${game.i18n.localize("FANHUNTER3E.OtherFormula")}`;
 
     // Invoke the roll and submit it to chat
     const roll = new Roll(rollData.item.formula, rollData).roll();
@@ -924,7 +924,7 @@ export default class Item5e extends Item {
         }
         // Case 5, item unusable, display warning and do nothing
         else {
-          ui.notifications.warn(game.i18n.format("DND5E.ItemNoUses", {name: this.name}));
+          ui.notifications.warn(game.i18n.format("FANHUNTER3E.ItemNoUses", {name: this.name}));
         }
       }
     }
@@ -954,7 +954,7 @@ export default class Item5e extends Item {
 
     // Display a Chat Message
     const promises = [roll.toMessage({
-      flavor: `${game.i18n.format("DND5E.ItemRechargeCheck", {name: this.name})} - ${game.i18n.localize(success ? "DND5E.ItemRechargeSuccess" : "DND5E.ItemRechargeFailure")}`,
+      flavor: `${game.i18n.format("FANHUNTER3E.ItemRechargeCheck", {name: this.name})} - ${game.i18n.localize(success ? "FANHUNTER3E.ItemRechargeSuccess" : "FANHUNTER3E.ItemRechargeFailure")}`,
       speaker: ChatMessage.getSpeaker({actor: this.actor, token: this.actor.token})
     })];
 
@@ -976,7 +976,7 @@ export default class Item5e extends Item {
     // Prepare roll data
     let rollData = this.getRollData();
     const parts = [`@mod`, "@prof"];
-    const title = `${this.name} - ${game.i18n.localize("DND5E.ToolCheck")}`;
+    const title = `${this.name} - ${game.i18n.localize("FANHUNTER3E.ToolCheck")}`;
 
     // Compose the roll data
     const rollConfig = mergeObject({
@@ -985,7 +985,7 @@ export default class Item5e extends Item {
       template: "systems/dnd5e/templates/chat/tool-roll-dialog.html",
       title: title,
       speaker: ChatMessage.getSpeaker({actor: this.actor}),
-      flavor: `${this.name} - ${game.i18n.localize("DND5E.ToolCheck")}`,
+      flavor: `${this.name} - ${game.i18n.localize("FANHUNTER3E.ToolCheck")}`,
       dialogOptions: {
         width: 400,
         top: options.event ? options.event.clientY - 80 : null,
@@ -1063,7 +1063,7 @@ export default class Item5e extends Item {
     // Get the Item
     const item = actor.getOwnedItem(card.dataset.itemId);
     if ( !item ) {
-      return ui.notifications.error(game.i18n.format("DND5E.ActionWarningNoItem", {item: card.dataset.itemId, name: actor.name}))
+      return ui.notifications.error(game.i18n.format("FANHUNTER3E.ActionWarningNoItem", {item: card.dataset.itemId, name: actor.name}))
     }
     const spellLevel = parseInt(card.dataset.spellLevel) || null;
 
@@ -1072,7 +1072,7 @@ export default class Item5e extends Item {
     if ( isTargetted ) {
       targets = this._getChatCardTargets(card);
       if ( !targets.length ) {
-        ui.notifications.warn(game.i18n.localize("DND5E.ActionWarningNoToken"));
+        ui.notifications.warn(game.i18n.localize("FANHUNTER3E.ActionWarningNoToken"));
         return button.disabled = false;
       }
     }
@@ -1196,7 +1196,7 @@ export default class Item5e extends Item {
 
     // Create the spell scroll data
     const spellScrollData = mergeObject(scrollData, {
-      name: `${game.i18n.localize("DND5E.SpellScroll")}: ${itemData.name}`,
+      name: `${game.i18n.localize("FANHUNTER3E.SpellScroll")}: ${itemData.name}`,
       img: itemData.img,
       data: {
         "description.value": desc.trim(),

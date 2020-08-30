@@ -1,4 +1,4 @@
-<div class="dnd5e chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
+<div class="FANHUNTER3E chat-card item-card" data-actor-id="{{actor._id}}" data-item-id="{{item._id}}"
      {{#if tokenId}}data-token-id="{{tokenId}}"{{/if}} {{#if isSpell}}data-spell-level="{{item.data.level}}"{{/if}}>
     <header class="card-header flexrow">
         <img src="{{item.img}}" title="{{item.name}}" width="36" height="36"/>
@@ -8,36 +8,36 @@
     <div class="card-content">
         {{{data.description.value}}}
         {{#if data.materials.value}}
-        <p><strong>{{ localize "DND5E.RequiredMaterials" }}.</strong> {{data.materials.value}}</p>
+        <p><strong>{{ localize "FANHUNTER3E.RequiredMaterials" }}.</strong> {{data.materials.value}}</p>
         {{/if}}
     </div>
 
     <div class="card-buttons">
-        {{#if hasAttack}}<button data-action="attack">{{ localize "DND5E.Attack" }}</button>{{/if}}
+        {{#if hasAttack}}<button data-action="attack">{{ localize "FANHUNTER3E.Attack" }}</button>{{/if}}
 
         {{#if hasDamage}}
         <button data-action="damage">
-            {{#if isHealing}}{{ localize "DND5E.Healing" }}
-            {{else}}{{localize "DND5E.Damage" }}{{/if}}
+            {{#if isHealing}}{{ localize "FANHUNTER3E.Healing" }}
+            {{else}}{{localize "FANHUNTER3E.Damage" }}{{/if}}
         </button>
         {{/if}}
 
         {{#if isVersatile}}
-        <button data-action="versatile">{{ localize "DND5E.Versatile" }}</button>
+        <button data-action="versatile">{{ localize "FANHUNTER3E.Versatile" }}</button>
         {{/if}}
 
         {{#if hasSave}}
         <button data-action="save" data-ability="{{data.save.ability}}" disabled>
-            {{ localize "DND5E.SavingThrow" }} {{labels.save}}
+            {{ localize "FANHUNTER3E.SavingThrow" }} {{labels.save}}
         </button>
         {{/if}}
 
         {{#if data.formula}}
-        <button data-action="formula">{{ localize "DND5E.OtherFormula"}}</button>
+        <button data-action="formula">{{ localize "FANHUNTER3E.OtherFormula"}}</button>
         {{/if}}
 
         {{#if hasAreaTarget}}
-        <button data-action="placeTemplate">{{ localize "DND5E.PlaceTemplate" }}</button>
+        <button data-action="placeTemplate">{{ localize "FANHUNTER3E.PlaceTemplate" }}</button>
         {{/if}}
     </div>
 

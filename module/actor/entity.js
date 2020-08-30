@@ -15,7 +15,7 @@ export default class Actor5e extends Actor {
    * @return {boolean}
    */
   get isPolymorphed() {
-    return this.getFlag("dnd5e", "isPolymorphed") || false;
+    return this.getFlag("fanhunter3e", "isPolymorphed") || false;
   }
 
   /* -------------------------------------------- */
@@ -87,15 +87,15 @@ export default class Actor5e extends Actor {
   prepareDerivedData() {
     const actorData = this.data;
     const data = actorData.data;
-    const flags = actorData.flags.dnd5e || {};
+    const flags = actorData.flags.fanhunter3e || {};
     const bonuses = getProperty(data, "bonuses.abilities") || {};
 
     // Retrieve data for polymorphed actors
     let originalSaves = null;
     let originalSkills = null;
     if (this.isPolymorphed) {
-      const transformOptions = this.getFlag('dnd5e', 'transformOptions');
-      const original = game.actors?.get(this.getFlag('dnd5e', 'originalActor'));
+      const transformOptions = this.getFlag('fanhunter3e', 'transformOptions');
+      const original = game.actors?.get(this.getFlag('fanhunter3e', 'originalActor'));
       if (original) {
         if (transformOptions.mergeSaves) {
           originalSaves = original.data.data.abilities;
@@ -274,7 +274,7 @@ export default class Actor5e extends Actor {
     if (actorData.type === 'vehicle') return;
 
     const data = actorData.data;
-    const flags = actorData.flags.dnd5e || {};
+    const flags = actorData.flags.fanhunter3e || {};
 
     // Skill modifiers
     const feats = FANHUNTER.characterFlags;
@@ -417,7 +417,7 @@ export default class Actor5e extends Actor {
     }, 0);
 
     // [Optional] add Currency Weight
-    if ( game.settings.get("dnd5e", "currencyWeight") ) {
+    if ( game.settings.get("fanhunter3e", "currencyWeight") ) {
       const currency = actorData.data.currency;
       const numCoins = Object.values(currency).reduce((val, denom) => val += denom, 0);
       weight += Math.round((numCoins * 10) / CONFIG.FANHUNTER.encumbrance.currencyPerWeight) / 10;
@@ -432,7 +432,7 @@ export default class Actor5e extends Actor {
       huge: 4,
       grg: 8
     }[actorData.data.traits.size] || 1;
-    if ( this.getFlag("dnd5e", "powerfulBuild") ) mod = Math.min(mod * 2, 8);
+    if ( this.getFlag("fanhunter3e", "powerfulBuild") ) mod = Math.min(mod * 2, 8);
 
     // Compute Encumbrance percentage
     const max = actorData.data.abilities.str.value * CONFIG.FANHUNTER.encumbrance.strMultiplier * mod;
@@ -593,7 +593,7 @@ export default class Actor5e extends Actor {
     if ( usesSlots && consumeSlot && (lvl > 0) ) {
       const slots = parseInt(this.data.data.spells[consumeSlot].value);
       if ( slots === 0 || Number.isNaN(slots) ) {
-        return ui.notifications.error(game.i18n.localize("DND5E.SpellCastNoSlots"));
+        return ui.notifications.error(game.i18n.localize("FANHUNTER3E.SpellCastNoSlots"));
       }
       await this.update({
         [`data.spells.${consumeSlot}.value`]: Math.max(parseInt(this.data.data.spells[consumeSlot].value) - 1, 0)
@@ -603,7 +603,7 @@ export default class Actor5e extends Actor {
     // Update Item data
     if ( limitedUses && consumeUse ) {
       const uses = parseInt(itemData.uses.value || 0);
-      if ( uses <= 0 ) ui.notifications.warn(game.i18n.format("DND5E.ItemNoUses", {name: item.name}));
+      if ( uses <= 0 ) ui.notifications.warn(game.i18n.format("FANHUNTER3E.ItemNoUses", {name: item.name}));
       await item.update({"data.uses.value": Math.max(parseInt(item.data.data.uses.value || 0) - 1, 0)})
     }
 
@@ -653,16 +653,16 @@ export default class Actor5e extends Actor {
     }
 
     // Reliable Talent applies to any skill check we have full or better proficiency in
-    const reliableTalent = (skl.value >= 1 && this.getFlag("dnd5e", "reliableTalent"));
+    const reliableTalent = (skl.value >= 1 && this.getFlag("fanhunter3e", "reliableTalent"));
 
     // Roll and return
     const rollData = mergeObject(options, {
       parts: parts,
       data: data,
-      title: game.i18n.format("DND5E.SkillPromptTitle", {skill: CONFIG.FANHUNTER.skills[skillId]}),
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      title: game.i18n.format("FANHUNTER3E.SkillPromptTitle", {skill: CONFIG.FANHUNTER.skills[skillId]}),
+      halflingLucky: this.getFlag("fanhunter3e", "halflingLucky"),
       reliableTalent: reliableTalent,
-      messageData: {"flags.dnd5e.roll": {type: "skill", skillId }}
+      messageData: {"flags.fanhunter3e.roll": {type: "skill", skillId }}
     });
     rollData.speaker = options.speaker || ChatMessage.getSpeaker({actor: this});
     return d20Roll(rollData);
@@ -679,15 +679,15 @@ export default class Actor5e extends Actor {
   rollAbility(abilityId, options={}) {
     const label = CONFIG.FANHUNTER.abilities[abilityId];
     new Dialog({
-      title: game.i18n.format("DND5E.AbilityPromptTitle", {ability: label}),
-      content: `<p>${game.i18n.format("DND5E.AbilityPromptText", {ability: label})}</p>`,
+      title: game.i18n.format("FANHUNTER3E.AbilityPromptTitle", {ability: label}),
+      content: `<p>${game.i18n.format("FANHUNTER3E.AbilityPromptText", {ability: label})}</p>`,
       buttons: {
         test: {
-          label: game.i18n.localize("DND5E.ActionAbil"),
+          label: game.i18n.localize("FANHUNTER3E.ActionAbil"),
           callback: () => this.rollAbilityTest(abilityId, options)
         },
         save: {
-          label: game.i18n.localize("DND5E.ActionSave"),
+          label: game.i18n.localize("FANHUNTER3E.ActionSave"),
           callback: () => this.rollAbilitySave(abilityId, options)
         }
       }
@@ -712,7 +712,7 @@ export default class Actor5e extends Actor {
     const data = {mod: abl.mod};
 
     // Add feat-related proficiency bonuses
-    const feats = this.data.flags.dnd5e || {};
+    const feats = this.data.flags.fanhunter3e || {};
     if ( feats.remarkableAthlete && FANHUNTER.characterFlags.remarkableAthlete.abilities.includes(abilityId) ) {
       parts.push("@proficiency");
       data.proficiency = Math.ceil(0.5 * this.data.data.attributes.prof);
@@ -738,9 +738,9 @@ export default class Actor5e extends Actor {
     const rollData = mergeObject(options, {
       parts: parts,
       data: data,
-      title: game.i18n.format("DND5E.AbilityPromptTitle", {ability: label}),
+      title: game.i18n.format("FANHUNTER3E.AbilityPromptTitle", {ability: label}),
       halflingLucky: feats.halflingLucky,
-      messageData: {"flags.dnd5e.roll": {type: "ability", abilityId }}
+      messageData: {"flags.fanhunter3e.roll": {type: "ability", abilityId }}
     });
     rollData.speaker = options.speaker || ChatMessage.getSpeaker({actor: this});
     return d20Roll(rollData);
@@ -785,9 +785,9 @@ export default class Actor5e extends Actor {
     const rollData = mergeObject(options, {
       parts: parts,
       data: data,
-      title: game.i18n.format("DND5E.SavePromptTitle", {ability: label}),
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
-      messageData: {"flags.dnd5e.roll": {type: "save", abilityId }}
+      title: game.i18n.format("FANHUNTER3E.SavePromptTitle", {ability: label}),
+      halflingLucky: this.getFlag("fanhunter3e", "halflingLucky"),
+      messageData: {"flags.fanhunter3e.roll": {type: "save", abilityId }}
     });
     rollData.speaker = options.speaker || ChatMessage.getSpeaker({actor: this});
     return d20Roll(rollData);
@@ -805,7 +805,7 @@ export default class Actor5e extends Actor {
     // Display a warning if we are not at zero HP or if we already have reached 3
     const death = this.data.data.attributes.death;
     if ( (this.data.data.attributes.hp.value > 0) || (death.failure >= 3) || (death.success >= 3)) {
-      ui.notifications.warn(game.i18n.localize("DND5E.DeathSaveUnnecessary"));
+      ui.notifications.warn(game.i18n.localize("FANHUNTER3E.DeathSaveUnnecessary"));
       return null;
     }
 
@@ -825,11 +825,11 @@ export default class Actor5e extends Actor {
     const rollData = mergeObject(options, {
       parts: parts,
       data: data,
-      title: game.i18n.localize("DND5E.DeathSavingThrow"),
+      title: game.i18n.localize("FANHUNTER3E.DeathSavingThrow"),
       speaker: speaker,
-      halflingLucky: this.getFlag("dnd5e", "halflingLucky"),
+      halflingLucky: this.getFlag("fanhunter3e", "halflingLucky"),
       targetValue: 10,
-      messageData: {"flags.dnd5e.roll": {type: "death"}}
+      messageData: {"flags.fanhunter3e.roll": {type: "death"}}
     });
     rollData.speaker = speaker;
     const roll = await d20Roll(rollData);
@@ -850,7 +850,7 @@ export default class Actor5e extends Actor {
           "data.attributes.death.failure": 0,
           "data.attributes.hp.value": 1
         });
-        await ChatMessage.create({content: game.i18n.format("DND5E.DeathSaveCriticalSuccess", {name: this.name}), speaker});
+        await ChatMessage.create({content: game.i18n.format("FANHUNTER3E.DeathSaveCriticalSuccess", {name: this.name}), speaker});
       }
 
       // 3 Successes = survive and reset checks
@@ -859,7 +859,7 @@ export default class Actor5e extends Actor {
           "data.attributes.death.success": 0,
           "data.attributes.death.failure": 0
         });
-        await ChatMessage.create({content: game.i18n.format("DND5E.DeathSaveSuccess", {name: this.name}), speaker});
+        await ChatMessage.create({content: game.i18n.format("FANHUNTER3E.DeathSaveSuccess", {name: this.name}), speaker});
       }
 
       // Increment successes
@@ -871,7 +871,7 @@ export default class Actor5e extends Actor {
       let failures = (death.failure || 0) + (d20 === 1 ? 2 : 1);
       await this.update({"data.attributes.death.failure": Math.clamped(failures, 0, 3)});
       if ( failures >= 3 ) {  // 3 Failures = death
-        await ChatMessage.create({content: game.i18n.format("DND5E.DeathSaveFailure", {name: this.name}), speaker});
+        await ChatMessage.create({content: game.i18n.format("FANHUNTER3E.DeathSaveFailure", {name: this.name}), speaker});
       }
     }
 
@@ -908,13 +908,13 @@ export default class Actor5e extends Actor {
 
     // If no class is available, display an error notification
     if ( !cls ) {
-      ui.notifications.error(game.i18n.format("DND5E.HitDiceWarn", {name: this.name, formula: denomination}));
+      ui.notifications.error(game.i18n.format("FANHUNTER3E.HitDiceWarn", {name: this.name, formula: denomination}));
       return null;
     }
 
     // Prepare roll data
     const parts = [`1${denomination}`, "@abilities.con.mod"];
-    const title = game.i18n.localize("DND5E.HitDiceRoll");
+    const title = game.i18n.localize("FANHUNTER3E.HitDiceRoll");
     const rollData = duplicate(this.data.data);
 
     // Call the roll helper utility
@@ -927,7 +927,7 @@ export default class Actor5e extends Actor {
       allowcritical: false,
       fastForward: !dialog,
       dialogOptions: {width: 350},
-      messageData: {"flags.dnd5e.roll": {type: "hitDie"}}
+      messageData: {"flags.fanhunter3e.roll": {type: "hitDie"}}
     });
     if ( !roll ) return null;
 
@@ -1005,10 +1005,10 @@ export default class Actor5e extends Actor {
 
     // Display a Chat Message summarizing the rest effects
     let restFlavor;
-    switch (game.settings.get("dnd5e", "restVariant")) {
-      case 'normal': restFlavor = game.i18n.localize("DND5E.ShortRestNormal"); break;
-      case 'gritty': restFlavor = game.i18n.localize(newDay ? "DND5E.ShortRestOvernight" : "DND5E.ShortRestGritty"); break;
-      case 'epic':  restFlavor = game.i18n.localize("DND5E.ShortRestEpic"); break;
+    switch (game.settings.get("fanhunter3e", "restVariant")) {
+      case 'normal': restFlavor = game.i18n.localize("FANHUNTER3E.ShortRestNormal"); break;
+      case 'gritty': restFlavor = game.i18n.localize(newDay ? "FANHUNTER3E.ShortRestOvernight" : "FANHUNTER3E.ShortRestGritty"); break;
+      case 'epic':  restFlavor = game.i18n.localize("FANHUNTER3E.ShortRestEpic"); break;
     }
 
     if ( chat ) {
@@ -1016,7 +1016,7 @@ export default class Actor5e extends Actor {
         user: game.user._id,
         speaker: {actor: this, alias: this.name},
         flavor: restFlavor,
-        content: game.i18n.format("DND5E.ShortRestResult", {name: this.name, dice: -dhd, health: dhp})
+        content: game.i18n.format("FANHUNTER3E.ShortRestResult", {name: this.name, dice: -dhd, health: dhp})
       });
     }
 
@@ -1114,10 +1114,10 @@ export default class Actor5e extends Actor {
 
     // Display a Chat Message summarizing the rest effects
     let restFlavor;
-    switch (game.settings.get("dnd5e", "restVariant")) {
-      case 'normal': restFlavor = game.i18n.localize(newDay ? "DND5E.LongRestOvernight" : "DND5E.LongRestNormal"); break;
-      case 'gritty': restFlavor = game.i18n.localize("DND5E.LongRestGritty"); break;
-      case 'epic':  restFlavor = game.i18n.localize("DND5E.LongRestEpic"); break;
+    switch (game.settings.get("fanhunter3e", "restVariant")) {
+      case 'normal': restFlavor = game.i18n.localize(newDay ? "FANHUNTER3E.LongRestOvernight" : "FANHUNTER3E.LongRestNormal"); break;
+      case 'gritty': restFlavor = game.i18n.localize("FANHUNTER3E.LongRestGritty"); break;
+      case 'epic':  restFlavor = game.i18n.localize("FANHUNTER3E.LongRestEpic"); break;
     }
 
     if ( chat ) {
@@ -1125,7 +1125,7 @@ export default class Actor5e extends Actor {
         user: game.user._id,
         speaker: {actor: this, alias: this.name},
         flavor: restFlavor,
-        content: game.i18n.format("DND5E.LongRestResult", {name: this.name, health: dhp, dice: dhd})
+        content: game.i18n.format("FANHUNTER3E.LongRestResult", {name: this.name, health: dhp, dice: dhd})
       });
     }
 
@@ -1182,15 +1182,15 @@ export default class Actor5e extends Actor {
     keepItems=false, keepBio=false, keepVision=false, transformTokens=true}={}) {
 
     // Ensure the player is allowed to polymorph
-    const allowed = game.settings.get("dnd5e", "allowPolymorphing");
+    const allowed = game.settings.get("fanhunter3e", "allowPolymorphing");
     if ( !allowed && !game.user.isGM ) {
-      return ui.notifications.warn(game.i18n.localize("DND5E.PolymorphWarn"));
+      return ui.notifications.warn(game.i18n.localize("FANHUNTER3E.PolymorphWarn"));
     }
 
     // Get the original Actor data and the new source data
     const o = duplicate(this.data);
-    o.flags.dnd5e = o.flags.dnd5e || {};
-    o.flags.dnd5e.transformOptions = {mergeSkills, mergeSaves};
+    o.flags.fanhunter3e = o.flags.fanhunter3e || {};
+    o.flags.fanhunter3e.transformOptions = {mergeSkills, mergeSaves};
     const source = duplicate(target.data);
 
     // Prepare new data to merge from the source
@@ -1264,7 +1264,7 @@ export default class Actor5e extends Actor {
     if (!keepClass && d.data.details.cr) {
       d.items.push({
         type: 'class',
-        name: game.i18n.localize('DND5E.PolymorphTmpClass'),
+        name: game.i18n.localize('FANHUNTER3E.PolymorphTmpClass'),
         data: { levels: d.data.details.cr }
       });
     }
@@ -1276,8 +1276,8 @@ export default class Actor5e extends Actor {
     if (keepVision) d.data.traits.senses = o.data.traits.senses;
 
     // Set new data flags
-    if ( !this.isPolymorphed || !d.flags.dnd5e.originalActor ) d.flags.dnd5e.originalActor = this.id;
-    d.flags.dnd5e.isPolymorphed = true;
+    if ( !this.isPolymorphed || !d.flags.fanhunter3e.originalActor ) d.flags.fanhunter3e.originalActor = this.id;
+    d.flags.fanhunter3e.isPolymorphed = true;
 
     // Update unlinked Tokens in place since they can simply be re-dropped from the base actor
     if (this.isToken) {
@@ -1289,7 +1289,7 @@ export default class Actor5e extends Actor {
 
     // Update regular Actors by creating a new Actor with the Polymorphed data
     await this.sheet.close();
-    Hooks.callAll('dnd5e.transformActor', this, target, d, {
+    Hooks.callAll('fanhunter3e.transformActor', this, target, d, {
       keepPhysical, keepMental, keepSaves, keepSkills, mergeSaves, mergeSkills,
       keepClass, keepFeats, keepSpells, keepItems, keepBio, keepVision, transformTokens
     });
@@ -1318,7 +1318,7 @@ export default class Actor5e extends Actor {
   async revertOriginalForm() {
     if ( !this.isPolymorphed ) return;
     if ( !this.owner ) {
-      return ui.notifications.warn(game.i18n.localize("DND5E.PolymorphRevertWarn"));
+      return ui.notifications.warn(game.i18n.localize("FANHUNTER3E.PolymorphRevertWarn"));
     }
 
     // If we are reverting an unlinked token, simply replace it with the base actor prototype
@@ -1330,7 +1330,7 @@ export default class Actor5e extends Actor {
     }
 
     // Obtain a reference to the original actor
-    const original = game.actors.get(this.getFlag('dnd5e', 'originalActor'));
+    const original = game.actors.get(this.getFlag('fanhunter3e', 'originalActor'));
     if ( !original ) return;
 
     // Get the Tokens which represent this actor
@@ -1359,14 +1359,14 @@ export default class Actor5e extends Actor {
    */
   static addDirectoryContextOptions(html, entryOptions) {
     entryOptions.push({
-      name: 'DND5E.PolymorphRestoreTransformation',
+      name: 'FANHUNTER3E.PolymorphRestoreTransformation',
       icon: '<i class="fas fa-backward"></i>',
       callback: li => {
         const actor = game.actors.get(li.data('entityId'));
         return actor.revertOriginalForm();
       },
       condition: li => {
-        const allowed = game.settings.get("dnd5e", "allowPolymorphing");
+        const allowed = game.settings.get("fanhunter3e", "allowPolymorphing");
         if ( !allowed && !game.user.isGM ) return false;
         const actor = game.actors.get(li.data('entityId'));
         return actor && actor.isPolymorphed;

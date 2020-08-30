@@ -1,11 +1,11 @@
 /**
- * The DnD5e game system for Foundry Virtual Tabletop
+ * The fanhunter3e game system for Foundry Virtual Tabletop
  * A system for playing the fifth edition of the worlds most popular roleplaying game.
  * Author: Atropos
  * Software License: GNU GPLv3
  * Content License: https://media.wizards.com/2016/downloads/DND/SRD-OGL_V5.1.pdf
- * Repository: https://gitlab.com/foundrynet/dnd5e
- * Issue Tracker: https://gitlab.com/foundrynet/dnd5e/issues
+ * Repository: https://gitlab.com/foundrynet/fanhunter3e
+ * Issue Tracker: https://gitlab.com/foundrynet/fanhunter3e/issues
  */
 
 // Import Modules
@@ -84,11 +84,11 @@ Hooks.once("init", function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("dnd5e", ActorSheet5eCharacter, { types: ["character"], makeDefault: true });
-  Actors.registerSheet("dnd5e", ActorSheet5eNPC, { types: ["npc"], makeDefault: true });
-  Actors.registerSheet('dnd5e', ActorSheet5eVehicle, {types: ['vehicle'], makeDefault: true});
+  Actors.registerSheet("fanhunter3e", ActorSheet5eCharacter, { types: ["character"], makeDefault: true });
+  Actors.registerSheet("fanhunter3e", ActorSheet5eNPC, { types: ["npc"], makeDefault: true });
+  Actors.registerSheet('fanhunter3e', ActorSheet5eVehicle, {types: ['vehicle'], makeDefault: true});
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("dnd5e", ItemSheet5e, {makeDefault: true});
+  Items.registerSheet("fanhunter3e", ItemSheet5e, {makeDefault: true});
 
   // Preload Handlebars Templates
   preloadHandlebarsTemplates();
@@ -141,7 +141,7 @@ Hooks.once("setup", function() {
 Hooks.once("ready", function() {
 
   // Determine whether a system migration is required and feasible
-  const currentVersion = game.settings.get("dnd5e", "systemMigrationVersion");
+  const currentVersion = game.settings.get("fanhunter3e", "systemMigrationVersion");
   const NEEDS_MIGRATION_VERSION = 0.84;
   const COMPATIBLE_MIGRATION_VERSION = 0.80;
   let needMigration = (currentVersion < NEEDS_MIGRATION_VERSION) || (currentVersion === null);
@@ -149,7 +149,7 @@ Hooks.once("ready", function() {
   // Perform the migration
   if ( needMigration && game.user.isGM ) {
     if ( currentVersion && (currentVersion < COMPATIBLE_MIGRATION_VERSION) ) {
-      ui.notifications.error(`Your DnD5e system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`, {permanent: true});
+      ui.notifications.error(`Your fanhunter3e system data is from too old a Foundry version and cannot be reliably migrated to the latest version. The process will be attempted, but errors may occur.`, {permanent: true});
     }
     migrations.migrateWorld();
   }
@@ -165,7 +165,7 @@ Hooks.once("ready", function() {
 Hooks.on("canvasInit", function() {
 
   // Extend Diagonal Measurement
-  canvas.grid.diagonalRule = game.settings.get("dnd5e", "diagonalMovement");
+  canvas.grid.diagonalRule = game.settings.get("fanhunter3e", "diagonalMovement");
   SquareGrid.prototype.measureDistances = measureDistances;
 
   // Extend Token Resource Bars
@@ -186,7 +186,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
   chat.highlightCriticalSuccessFailure(app, html, data);
 
   // Optionally collapse the content
-  if (game.settings.get("dnd5e", "autoCollapseItemCards")) html.find(".card-content").hide();
+  if (game.settings.get("fanhunter3e", "autoCollapseItemCards")) html.find(".card-content").hide();
 });
 Hooks.on("getChatLogEntryContext", chat.addChatMessageContextOptions);
 Hooks.on("renderChatLog", (app, html, data) => Item5e.chatListeners(html));

@@ -7,7 +7,7 @@
 
     {{#if hasSpellSlots}}
     <div class="form-group">
-        <label>{{ localize "DND5E.SpellCastUpcast" }}</label>
+        <label>{{ localize "FANHUNTER3E.SpellCastUpcast" }}</label>
         <div class="form-fields">
             <select name="level" {{#unless canUpcast}}disabled{{/unless}}>
                 {{#select item.data.level}}
@@ -21,14 +21,14 @@
 
     {{#if canUpcast}}
     <div class="form-group">
-        <label class="checkbox"><input type="checkbox" name="consumeSlot" checked/>{{ localize "DND5E.SpellCastConsume" }}</label>
+        <label class="checkbox"><input type="checkbox" name="consumeSlot" checked/>{{ localize "FANHUNTER3E.SpellCastConsume" }}</label>
     </div>
     {{/if}}
     {{/if}}
 
     {{#if hasLimitedUses}}
     <div class="form-group">
-        <label class="checkbox"><input type="checkbox" name="consumeUse" checked/>{{ localize "DND5E.AbilityUseConsume" }}</label>
+        <label class="checkbox"><input type="checkbox" name="consumeUse" checked/>{{ localize "FANHUNTER3E.AbilityUseConsume" }}</label>
     </div>
     {{/if}}
 
@@ -36,7 +36,7 @@
     <div class="form-group">
         <label class="checkbox">
             <input type="checkbox" name="placeTemplate" checked/>
-            {{ localize "DND5E.PlaceTemplate" }}
+            {{ localize "FANHUNTER3E.PlaceTemplate" }}
         </label>
     </div>
     {{/if}}
