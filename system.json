@@ -23,6 +23,6 @@
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.7.2",
   "url": "https://github.com/Horror-cosmico/fh-foundry-vtt",
-  "manifest": "https://github.com/Horror-cosmico/fh-foundry-vtt/raw/master/system.json",
-  "download": "https://github.com/Horror-cosmico/fh-foundry-vtt/-/archive/release-0.9.6/dnd5e-release-0.9.6.zip"
+  "manifest": "https://raw.githubusercontent.com/Horror-cosmico/fh-foundry-vtt/master/system.json",
+  "download": "https://github.com/Horror-cosmico/fh-foundry-vtt/archive/0.02.zip"
 }
